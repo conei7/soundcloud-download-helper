@@ -1,0 +1,10 @@
+{
+  "name": "soundcloud-download-helper",
+  "version": "1.19.16",
+  "private": true,
+  "description": "SoundCloud availability highlighting and download metadata tagging browser extension",
+  "scripts": {
+    "test": "node tests/backup-verify.cjs && node tests/traffic-verify.cjs"
+  },
+  "engines": {"node": ">=22"}
+}

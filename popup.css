@@ -1,0 +1,22 @@
+body { width: 300px; margin: 0; padding: 18px; background: #171b19; color: #f0f4f1; font: 13px/1.6 system-ui,sans-serif; }
+h1 { margin: 0 0 10px; font-size: 17px; }
+h2 { margin: 18px 0 10px; padding-top: 16px; border-top: 1px solid #35443b; font-size: 15px; }
+p { margin: 10px 0; }
+button,label[for="import"] { display: block; box-sizing: border-box; width: 100%; margin-top: 10px; padding: 9px 12px; border: 1px solid #258d60; border-radius: 6px; background: #126c45; color: #fff; font: inherit; text-align: center; cursor: pointer; }
+label[for="import"] { background: transparent; }
+button:disabled { opacity: .6; cursor: wait; }
+button:focus-visible,label:focus-within { outline: 2px solid #71d7a5; outline-offset: 2px; }
+input[type="file"] { display: block; max-width: 100%; margin-top: 6px; font: inherit; }
+.toggle { display: flex; position: relative; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; cursor: pointer; }
+.toggle input { position: absolute; right: 0; width: 38px; height: 22px; margin: 0; opacity: 0; }
+.switch { flex: 0 0 38px; height: 22px; border-radius: 20px; background: #526058; pointer-events: none; transition: background .15s; }
+.switch::after { content: ''; display: block; width: 16px; height: 16px; margin: 3px; border-radius: 50%; background: #fff; transition: transform .15s; }
+.toggle input:checked + .switch { background: #169d66; }
+.toggle input:checked + .switch::after { transform: translateX(16px); }
+.toggle input:disabled + .switch { opacity: .5; }
+.toggle input:focus-visible + .switch { outline: 2px solid #71d7a5; outline-offset: 3px; }
+.note { color: #b8c3bd; font-size: 11px; }
+#status { margin-bottom: 0; color: #9de4bf; overflow-wrap: anywhere; }
+#status.error { color: #ffb8a9; }
+#settings-status { margin: 0; color: #9de4bf; font-size: 11px; }
+#settings-status.error { color: #ffb8a9; }

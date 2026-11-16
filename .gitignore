@@ -1,0 +1,30 @@
+# Credentials and machine settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+
+# Private browser data, diagnostics, downloads and investigations
+inspection/
+test-profile/
+*test-browser*/
+*test-profile*/
+downloads/
+logs/
+*.log
+*.wav
+*.mp3
+*.flac
+*.zip
+*.crx
+*.ldb
+*.sqlite*
+*.db
+*backup*.json
+*history*.json
+*debug*.json

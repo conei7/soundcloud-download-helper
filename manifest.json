@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "SoundCloud 入手リンク強調",
+  "version": "1.19.16",
+  "permissions": ["storage"],
+  "optional_permissions": ["downloads", "webNavigation"],
+  "optional_host_permissions": ["https://*.sndcdn.com/*"],
+  "host_permissions": ["https://soundcloud.com/*", "https://www.soundcloud.com/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_popup": "popup.html", "default_title": "SoundCloud 強調の設定"},
+  "description": "検索結果や個人ページの Download・Buy・Free 表示を検出し、該当する曲を強調します。",
+  "content_scripts": [{
+    "matches": ["https://soundcloud.com/*", "https://www.soundcloud.com/*"],
+    "js": ["metadata.js", "audio-tags.js", "native-observer.js", "tag-download.js"],
+    "world": "MAIN",
+    "run_at": "document_start"
+  }, {
+    "matches": ["https://soundcloud.com/*", "https://www.soundcloud.com/*"],
+    "js": ["external-bridge.js"],
+    "run_at": "document_start"
+  }, {
+    "matches": ["https://soundcloud.com/*", "https://www.soundcloud.com/*"],
+    "js": ["settings.js", "metadata.js", "native-catalog.js", "content.js"],
+    "css": ["content.css"],
+    "run_at": "document_idle"
+  }]
+}

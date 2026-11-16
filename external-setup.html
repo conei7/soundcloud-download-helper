@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ダウンロードの自動タグ付け</title><link rel="stylesheet" href="popup.css">
+<style>body{width:auto;max-width:680px;margin:40px auto;padding:24px}input[type=text]{padding:8px;font:inherit;width:90%;background:#25362c;color:white;border:1px solid #526058}button{max-width:400px}#external-status{white-space:pre-wrap;overflow-wrap:anywhere}.error{color:#ffb8a9}</style></head>
+<body><h1>ダウンロードの自動タグ付け</h1>
+<p>SoundCloudの通常のDownloadボタン、またはSoundCloudから開いた配布サイトで保存したMP3 / WAV / FLACと、同じ曲を収めたZIPに、曲名やジャケットを自動で書き込みます。Hypeddit・ToneDen・Dropbox・Google Driveなど、サイト名の限定はありません。音声の再ダウンロードは行いません。</p>
+<h2>最初に一度だけ設定</h2>
+<p>ブラウザーの「ダウンロード」内にある <strong>SoundCloud フォルダー</strong>を選んでください。まだなければ、フォルダー選択画面で作成できます。</p>
+<button id="choose-folder">SoundCloudフォルダーを選んで有効にする</button>
+<p id="external-status" role="status"></p>
+<details><summary>フォルダー名をSoundCloud以外にする場合</summary>
+<p>通常のダウンロード先からのフォルダー名</p>
+<input id="relative-path" type="text" value="SoundCloud" aria-label="専用フォルダーの相対パス"></details>
+<h2>設定後の使い方</h2>
+<ol><li><strong>SoundCloudを再読み込み</strong>します。</li><li>曲の通常の<strong>Downloadボタン</strong>を押します。外部配布の曲は<strong>配布サイトへのリンク</strong>を開きます。</li><li>外部配布の場合は、配布サイトで<strong>いつもどおりダウンロード</strong>します。</li></ol>
+<p>対象の曲はSoundCloudフォルダーに保存され、保存完了後に曲名・アーティスト・ジャケットなどが入ります。処理結果は拡張機能アイコンから確認できます。</p>
+<button id="disable">自動タグ付けをオフにする</button>
+<p class="note">設定時だけ小さな確認ファイルを保存し、確認後に削除します。保存場所を毎回選ぶ設定なら、対象曲は上で許可したフォルダーへ保存してください。</p>
+<p class="note">ZIPは同じ曲のMP3・WAV・FLACと通常版・Extended版に対応し、ZIP内の音声名とタグを版を区別して更新します。別の曲が混在するZIP・暗号化ZIP・展開後256MB超は元の内容を保持します。フォロー・ログインなど配布サイトの手続きは通常どおり行ってください。SoundCloudからの移動経路や実ファイルを確認できない場合、複数曲で曖昧な場合は通常保存します。「直前に見た曲」だけで推測しません。アクセス許可が切れた場合はこの画面で再設定できます。</p>
+<script src="external-files.js"></script><script src="external-setup.js"></script></body></html>
